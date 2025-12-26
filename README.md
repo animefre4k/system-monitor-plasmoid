@@ -1,2 +1,2 @@
-# system-monitor-plasmoid
+# System monitor plasmoid
 Simple plasmoid for monitoring CPU and RAM
