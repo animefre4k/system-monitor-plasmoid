@@ -1,7 +1,7 @@
 # System monitor plasmoid
 Simple plasmoid for monitoring CPU and RAM
 
-<img width="181" height="35" alt="Screenshot_20251226_180303" src="https://github.com/user-attachments/assets/c61c8ec8-4f9e-4d98-b910-581d685ec33f" />
+<img width="157" height="43" alt="Screenshot_20251226_182111" src="https://github.com/user-attachments/assets/ecc3a22c-06fc-4931-a2a8-323fcfb34b72" />
 
 # Installation
 Download the zip in the releases tab
