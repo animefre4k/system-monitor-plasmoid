@@ -1,26 +1,13 @@
 {
   "KPackageStructure": "Plasma/Applet",
   "KPlugin": {
-    "Authors": [
-      {
-        "Name": "animefre4k"
-      }
-    ],
-    "BugReportUrl": "https://github.com/animefre4k/system-monitor-plasmoid/issues",
-    "Category": "System Information",
-    "Description": "Simple plasmoid for monitoring CPU and RAM",
-    "EnabledByDefault": true,
-    "Icon": "utilities-system-monitor",
     "Id": "cpu-ram",
-    "License": "GPL-2.0+",
     "Name": "CPU & RAM Monitor",
+    "Description": "Simple plasmoid for monitoring CPU and RAM",
+    "Icon": "utilities-system-monitor",
     "Version": "1.0.0",
-    "Website": "https://github.com/animefre4k/system-monitor-plasmoid"
+    "License": "GPL-2.0+",
+    "Category": "System Information"
   },
-  "X-Plasma-API-Minimum-Version": "6.0",
-  "X-Plasma-Provides": [
-    "org.kde.plasma.cpu",
-    "org.kde.plasma.ram",
-    "org.kde.plasma.temp"
-  ]
+  "X-Plasma-API-Minimum-Version": "6.0"
 }
