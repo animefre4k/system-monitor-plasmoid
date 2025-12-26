@@ -19,7 +19,7 @@ PlasmoidItem {
 
     Plasmoid.backgroundHints: PlasmaCore.Types.NoBackground
 
-    // Might add swap, upload and download
+    // Will add upload and download
     Sensors.Sensor {
         id: cpu
         sensorId: "cpu/all/usage"
