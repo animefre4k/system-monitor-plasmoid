@@ -11,3 +11,7 @@ Download the zip in the releases tab
 Move to the plasmoids folder
 
 `mv cpu-ram ~/.local/share/plasma/plasmoids/cpu-ram`
+
+# Todo
+- Config system
+- Upload and download
