@@ -1,6 +1,7 @@
 import QtQuick 6.5
 import QtQuick.Controls 6.5
 import QtQuick.Layouts 6.5
+
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.ksysguard.sensors 1.0 as Sensors
 import org.kde.plasma.core as PlasmaCore
@@ -10,16 +11,17 @@ PlasmoidItem {
     id: root
 
     // Will make this more configurable later
-    readonly property int fixedWidth: 150
+    readonly property int fixedWidth: 130
 
     width: fixedWidth
+    implicitHeight: Kirigami.Units.gridUnit
+
     Layout.minimumWidth: fixedWidth
     Layout.maximumWidth: fixedWidth
-    implicitHeight: Kirigami.Units.gridUnit
 
     Plasmoid.backgroundHints: PlasmaCore.Types.NoBackground
 
-    // Will add upload and download
+    // Sensors
     Sensors.Sensor {
         id: cpu
         sensorId: "cpu/all/usage"
@@ -38,24 +40,42 @@ PlasmoidItem {
         updateRateLimit: 1000
     }
 
-    property int cpuPercent: cpu.value !== undefined ? Math.round(cpu.value) : 0
-    property int ramPercent: ramUsed.value !== undefined && ramTotal.value !== undefined && ramTotal.value > 0 ? Math.round((ramUsed.value / ramTotal.value) * 100) : 0
+    property int cpuPercent: cpu.value !== undefined
+    ? Math.round(cpu.value)
+    : 0
 
-    Label {
+    property int ramPercent:
+    ramUsed.value !== undefined
+    && ramTotal.value !== undefined
+    && ramTotal.value > 0
+    ? Math.round((ramUsed.value / ramTotal.value) * 100)
+    : 0
+
+    RowLayout {
         anchors.centerIn: parent
+        spacing: Kirigami.Units.smallSpacing
 
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
+        Label {
+            text: "CPU"
+            font.bold: true
+            color: Kirigami.Theme.highlightColor
+        }
 
-        // Will add a proper config system sometime
-        font.bold: true
-        font.pointSize: 10
-        font.family: "Adwaita Mono, monospace"
+        Label {
+            text: `${cpuPercent}%`
+            color: Kirigami.Theme.highlightColor
+        }
 
-        // Follows accent color
-        // This can be hardcoded as - color: #FFFFFF
-        color: Kirigami.Theme.highlightColor
+        Label {
+            text: "RAM"
+            font.bold: true
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            color: Kirigami.Theme.highlightColor
+        }
 
-        text: `CPU ${cpuPercent}% | RAM ${ramPercent}%`
+        Label {
+            text: `${ramPercent}%`
+            color: Kirigami.Theme.highlightColor
+        }
     }
 }
