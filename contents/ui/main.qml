@@ -23,16 +23,19 @@ PlasmoidItem {
     Sensors.Sensor {
         id: cpu
         sensorId: "cpu/all/usage"
+        updateRateLimit: 1000
     }
 
     Sensors.Sensor {
         id: ramUsed
         sensorId: "memory/physical/used"
+        updateRateLimit: 1000
     }
 
     Sensors.Sensor {
         id: ramTotal
         sensorId: "memory/physical/total"
+        updateRateLimit: 1000
     }
 
     property int cpuPercent: cpu.value !== undefined ? Math.round(cpu.value) : 0
