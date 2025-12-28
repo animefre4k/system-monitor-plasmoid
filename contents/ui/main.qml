@@ -40,9 +40,7 @@ PlasmoidItem {
         updateRateLimit: 1000
     }
 
-    property int cpuPercent: cpu.value !== undefined
-    ? Math.round(cpu.value)
-    : 0
+    property int cpuPercent: cpu.value !== undefined ? Math.round(cpu.value) : 0
 
     property int ramPercent:
     ramUsed.value !== undefined
